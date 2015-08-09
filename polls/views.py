@@ -15,7 +15,7 @@ class IndexView(generic.ListView):
     def get_queryset(self):
         """Return the last five published quesitons"""
         now = timezone.now()
-        start_date = now - datetime.timedelta(days=+1)
+        start_date = now - datetime.timedelta(days=+2)
         end_date = now
         return Question.objects.filter(
             pub_date__range=(start_date,end_date)
